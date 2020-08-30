@@ -159,16 +159,82 @@
                                     style="display: none;"> <img
                                     src="https://www.kintone.com/wp-content/uploads/2019/03/next-status-compressor.png"
                                     style="display: inline;">
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="trial-section-1" class="bg-white"></div>
+        <div id="quote">
+            <div class="c-person-header-cta page-center d-flex justify-content-between align-items-center">
+                <div class="quote-content col-2 "></div>
+            </div>
+        </div>
+        <div class="statistics ">
+            <div class="page-center"></div>
+        </div>
+        <div id="trial-section-2" class="bg-white"></div>
+        <div id="clients_company_logo" class="bg-lightgray">
+            <div class="page-center"></div>
+        </div>
+        <div class="scroll scroll-up d-flex align-items-center justify-content-center"></div>
+        <div>
+
+        </div>
+    </div>
+    <script>$(document).ready(function () {
+            //		var progressBarOptions = {
+            //			startAngle: -1.55,
+            //			size: 170,
+            //			value: 0.75,
+            //			fill: {
+            //				color: '#ffa500'
+            //			}
+            //		}
+            //
+            //		$('.progress').circleProgress(progressBarOptions).on('circle-animation-progress', function(event, progress, stepValue) {
+            //			//$(this).find('strong').text(String(stepValue.toFixed(2)).substr(1));
+            //		});
+
+            $('.progress').each(function () {
+                var $percentage = $(this).parent().data('percentage') / 100;
+                var $fill_color = $(this).parent().data('fill');
+                $(this).circleProgress(
+                    {
+                        startAngle: -1.55,
+                        value: $percentage,
+                        thickness: 35,
+                        size: 170,
+                        fill:
+                        {
+                            color: "#" + $fill_color
+                        }
+                    });
+            });
+
+            var $imgs = $(".trial_image_v_a").find("img"),
+                i = 0;
+
+            function changeImage() {
+                var next = (++i % $imgs.length);
+                $($imgs.get(next - 1)).fadeOut(500);
+                $($imgs.get(next)).fadeIn(500);
+            }
+            var interval = setInterval(changeImage, 5000);
+
+            $(".scroll-down .inner-circle").click(function () {
+                $(window).scrollTo("#" + $(".scroll-down").next().attr('id'), 500);
+            });
+
+            $(".scroll-up .inner-circle").click(function () {
+                $(window).scrollTo("body", 500);
+            });
+
+        });</script>
+    </div>
 
 
 </body>
 
 </html>
-
