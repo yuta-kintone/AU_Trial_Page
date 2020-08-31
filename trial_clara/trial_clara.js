@@ -97,20 +97,21 @@ function findPlane() {
 
 function setup($form) {
   var $submit = $form.find('input[type="submit"]');
-  $submit.prop("disabled", true);
+  //$submit.prop("disabled", true);
 
-  var isValidSubdomain = false;
+  //var isValidSubdomain = false;
+  var isValidSubdomain = true;
   var $domain = $form.find('input[name="domain"]');
-  $domain.change(function () {
-    validateDomainInput($form, {
-      onSuccess: function () {
-        isValidSubdomain = true;
-      },
-      onFailure: function () {
-        isValidSubdomain = false;
-      },
-    });
-  });
+  // $domain.change(function () {
+  //   validateDomainInput($form, {
+  //     onSuccess: function () {
+  //       isValidSubdomain = true;
+  //     },
+  //     onFailure: function () {
+  //       isValidSubdomain = false;
+  //     },
+  //   });
+  // });
   $domain.on("input", function () {
     isValidSubdomain = false;
   });
