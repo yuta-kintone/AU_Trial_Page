@@ -109,12 +109,12 @@
 
                                         function setup($form) {
                                             var $submit = $form.find('input[type="submit"]');
-                                            $submit.prop('disabled', true);
+                                            //$submit.prop('disabled', true);
                                             var $domain = $form.find('input[name="domain"]');
-                                            $domain.change(validateDomain.bind($domain.get(0), $form));
-                                            if ($domain.val()) {
-                                                $domain.trigger("change");
-                                            }
+                                            //$domain.change(validateDomain.bind($domain.get(0), $form));
+                                            // if ($domain.val()) {
+                                            //     $domain.trigger("change");
+                                            // }
                                             //  if (YAKUMO_PLANE) {
                                             //    var $plane = $form.find('input[name="plane"]');
                                             //    $plane.val(YAKUMO_PLANE);
