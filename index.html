@@ -51,75 +51,21 @@
                             <div class="form-embed c-white">
                                 <div class="trial-form" id="hubspotform">
                                     <!--[if lte IE 8]>
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-    <![endif]-->
+                                        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                                    <![endif]-->
                                     <script charset="utf-8" type="text/javascript"
                                         src="//js.hsforms.net/forms/v2.js"></script>
                                     <script charset="utf-8" type="text/javascript"
                                         src="//js.kintone.com/jquery/3.4.1/jquery.min.js"></script>
+                                    <script charset="utf-8" type="text/javascript"
+                                        src="https://stagingkintone.wpengine.com/trial_clara/trial_clara.js"></script>
                                     <script>
-                                        var VALIDATE_DOMAIN_URL = 'https://get.kintone.com/api/open/validateSubdomain.json';
-                                        var REDIRECT_URL = 'https://yuta-kintone.github.io/AU_Trial_Page//thank-you.html';
+                                        var REDIRECT_URL = 'https://stagingkintone.wpengine.com/thank-you';
                                         var ORDER_ID_PARAM = "order_id";
-                                        //var F_ID =  "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Regular
-                                        // var F_ID = "1a85a987-3907-4a40-a60d-bde365432658" //NPO
-                                        //var F_ID =  "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Edu/Gov
+                                        //var F_ID = "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Regular
+                                        // var F_ID =  "1a85a987-3907-4a40-a60d-bde365432658" //NPO
+                                        // var F_ID =  "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Edu/Gov
                                         var F_ID = "b6128403-9287-40b6-ba57-21419ee506b6" //AU
-
-                                        function validateDomain($form) {
-                                            var $domainMessageContainer = $form.find('ul[id="domain-message"]');
-                                            if (!$domainMessageContainer[0]) {
-                                                $form.find('input[name="domain"]').parent().parent().append('<ul id="domain-message" class="hs-error-msgs inputs-list"></ul>');
-                                                $domainMessageContainer = $form.find('ul[id="domain-message"]');
-                                            }
-
-                                            // empty case
-                                            if (!this.value || this.value.length === 0) {
-                                                $domainMessageContainer.empty();
-                                                $form.find(':input[type="submit"]').prop('disabled', true);
-                                                return;
-                                            }
-
-                                            $.ajax({
-                                                url: VALIDATE_DOMAIN_URL,
-                                                type: 'POST',
-                                                data: JSON.stringify({ subdomain: this.value }),
-                                                contentType: 'application/json; charset=utf-8'
-                                            })
-                                                .then(function (response) {
-                                                    if (!response) {
-                                                        return;
-                                                    }
-                                                    $domainMessageContainer.empty();
-                                                    $domainMessageContainer.append('<li><label>Available</label></li>');
-                                                    $form.find(':input[type="submit"]').prop('disabled', false);
-                                                })
-                                                .catch(function (error) {
-                                                    if (error.status === 400 && error.responseJSON) {
-                                                        $domainMessageContainer.empty();
-                                                        $form.find(':input[type="submit"]').prop('disabled', true);
-                                                        var response = error.responseJSON;
-                                                        var messages = response.errors.subdomain.messages;
-                                                        if (messages) {
-                                                            $domainMessageContainer.append('<li><label>' + messages.join() + '</label></li>');
-                                                        }
-                                                    }
-                                                })
-                                        }
-
-                                        function setup($form) {
-                                            var $submit = $form.find('input[type="submit"]');
-                                            //$submit.prop('disabled', true);
-                                            var $domain = $form.find('input[name="domain"]');
-                                            //$domain.change(validateDomain.bind($domain.get(0), $form));
-                                            // if ($domain.val()) {
-                                            //     $domain.trigger("change");
-                                            // }
-                                            //  if (YAKUMO_PLANE) {
-                                            //    var $plane = $form.find('input[name="plane"]');
-                                            //    $plane.val(YAKUMO_PLANE);
-                                            //  }
-                                        }
 
                                         function getParam(name, url) {
                                             if (!url) url = window.location.href;
@@ -139,7 +85,6 @@
                                             }
                                         }
 
-                                        ////////
                                         hbspt.forms.create({
                                             portalId: "1857320",
                                             formId: F_ID,
