@@ -9,9 +9,20 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description"
         content="Get started with a Kintone free trial. Build custom apps to manage, automate and visualize processes across your team and the entire organization.">
-    <link media="all"
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TCKR4QK');</script>
+    <!-- End Google Tag Manager -->
+    <!--<link media="all"
         href="https://www.kintone.com/wp-content/cache/autoptimize/css/autoptimize_37eb79ba96239f49c79ecd8556052b09.css"
-        rel="stylesheet">
+        rel="stylesheet"> -->
+    <link rel="stylesheet" href="autoptimize.css">
     <script>function viewport() {
             var e = window,
                 a = 'inner';
@@ -27,16 +38,23 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCKR4QK" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="content" class="site-content">
         <script>window.custom_order_id_number = 20060862;</script>
         <div class="landing trial-landing">
             <div class="hero bg-orange">
                 <div class="page-center inline-container">
                     <div class="section pb-5">
-                        <div class="logo ta-center with-text"> <a href="http://www.kintone.com"> <img
-                                    src="https://www.kintone.com/wp-content/uploads/2018/01/kintone_white_logo.png"
-                                    alt="Kintone logo white, small"> </a></div>
+                        <div class="logo ta-center with-text"> <a href="https://kintone.com.au"> <img
+                                    src="./kintone_white_logo.png" alt="Kintone logo white, small"> </a>
+                            <h4 class=" c-white ">- Australia -</h4>
+                        </div>
                         <div class="page-center ta-center c-white trial-intro-text">
+
+
                             <p>Kintone is a centralized teamwork platform that enables organizations to effectively
                                 manage their data
                                 and workflow for better collaboration.</p>
@@ -45,81 +63,26 @@
                             <h1 class="form-title c-white">Start Using Kintone for Free</h1>
                             <div class="form-copy c-white">
                                 <p>No credit card required. No strings attached. No kidding.</p>
-                                <p>Are you a non-profit? Get the <a style="color: white; text-decoration: underline;"
-                                        href="https://www.kintone.com/npo-free-trial/">NPO free trial here</a>.</p>
                             </div>
                             <div class="form-embed c-white">
                                 <div class="trial-form" id="hubspotform">
                                     <!--[if lte IE 8]>
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-    <![endif]-->
+                                        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                                    <![endif]-->
                                     <script charset="utf-8" type="text/javascript"
                                         src="//js.hsforms.net/forms/v2.js"></script>
+                                    <script charset="utf-8" type="text/javascript" src="jquery.min.js"></script>
+                                    <!--　<script charset="utf-8" type="text/javascript"　src="https://yuta-kintone.github.io/AU_Free_Trial_Page/trial_clara.js"></script> -->
                                     <script charset="utf-8" type="text/javascript"
-                                        src="//js.kintone.com/jquery/3.4.1/jquery.min.js"></script>
+                                        src="https://www.kintone.com/trial_clara/trial_clara.js"></script>
                                     <script>
-                                        var VALIDATE_DOMAIN_URL = 'https://get.kintone.com/api/open/validateSubdomain.json';
-                                        var REDIRECT_URL = 'https://yuta-kintone.github.io/AU_Trial_Page//thank-you.html';
+
+                                        var REDIRECT_URL = 'https://kintone.com.au/thank-you/';
                                         var ORDER_ID_PARAM = "order_id";
-                                        //var F_ID =  "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Regular
-                                        // var F_ID = "1a85a987-3907-4a40-a60d-bde365432658" //NPO
-                                        //var F_ID =  "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Edu/Gov
+                                        //var F_ID = "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Regular
+                                        // var F_ID =  "1a85a987-3907-4a40-a60d-bde365432658" //NPO
+                                        // var F_ID =  "4a5eb5a0-9e25-4d33-8667-268c851a8057" //Edu/Gov
                                         var F_ID = "b6128403-9287-40b6-ba57-21419ee506b6" //AU
-
-                                        function validateDomain($form) {
-                                            var $domainMessageContainer = $form.find('ul[id="domain-message"]');
-                                            if (!$domainMessageContainer[0]) {
-                                                $form.find('input[name="domain"]').parent().parent().append('<ul id="domain-message" class="hs-error-msgs inputs-list"></ul>');
-                                                $domainMessageContainer = $form.find('ul[id="domain-message"]');
-                                            }
-
-                                            // empty case
-                                            if (!this.value || this.value.length === 0) {
-                                                $domainMessageContainer.empty();
-                                                $form.find(':input[type="submit"]').prop('disabled', true);
-                                                return;
-                                            }
-
-                                            $.ajax({
-                                                url: VALIDATE_DOMAIN_URL,
-                                                type: 'POST',
-                                                data: JSON.stringify({ subdomain: this.value }),
-                                                contentType: 'application/json; charset=utf-8'
-                                            })
-                                                .then(function (response) {
-                                                    if (!response) {
-                                                        return;
-                                                    }
-                                                    $domainMessageContainer.empty();
-                                                    $domainMessageContainer.append('<li><label>Available</label></li>');
-                                                    $form.find(':input[type="submit"]').prop('disabled', false);
-                                                })
-                                                .catch(function (error) {
-                                                    if (error.status === 400 && error.responseJSON) {
-                                                        $domainMessageContainer.empty();
-                                                        $form.find(':input[type="submit"]').prop('disabled', true);
-                                                        var response = error.responseJSON;
-                                                        var messages = response.errors.subdomain.messages;
-                                                        if (messages) {
-                                                            $domainMessageContainer.append('<li><label>' + messages.join() + '</label></li>');
-                                                        }
-                                                    }
-                                                })
-                                        }
-
-                                        function setup($form) {
-                                            var $submit = $form.find('input[type="submit"]');
-                                            //$submit.prop('disabled', true);
-                                            var $domain = $form.find('input[name="domain"]');
-                                            //$domain.change(validateDomain.bind($domain.get(0), $form));
-                                            // if ($domain.val()) {
-                                            //     $domain.trigger("change");
-                                            // }
-                                            //  if (YAKUMO_PLANE) {
-                                            //    var $plane = $form.find('input[name="plane"]');
-                                            //    $plane.val(YAKUMO_PLANE);
-                                            //  }
-                                        }
 
                                         function getParam(name, url) {
                                             if (!url) url = window.location.href;
@@ -139,7 +102,6 @@
                                             }
                                         }
 
-                                        ////////
                                         hbspt.forms.create({
                                             portalId: "1857320",
                                             formId: F_ID,
@@ -152,12 +114,9 @@
                             </div>
                         </div>
                         <div class="left col-2 inline-block va-top c-white">
-                            <div class="trial_image_v_a"> <img
-                                    src="https://www.kintone.com/wp-content/uploads/2019/03/database-compressor.png"
-                                    style="display: none;"> <img
-                                    src="https://www.kintone.com/wp-content/uploads/2019/03/Untitled-design-20-compressor.png"
-                                    style="display: none;"> <img
-                                    src="https://www.kintone.com/wp-content/uploads/2019/03/next-status-compressor.png"
+                            <div class="trial_image_v_a"> <img src="database-compressor.png"
+                                    style="display: none;"> <img src="Untitled-design-20-compressor.png"
+                                    style="display: none;"> <img src="next-status-compressor.png"
                                     style="display: inline;">
                             </div>
                         </div>
